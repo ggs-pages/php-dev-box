@@ -38,6 +38,10 @@ vagrant ssh -c '~/repo/vagrant/test.sh'
 vagrant ssh
 ```
 
+## Customizing
+
+Create a `vagrant/vagrant_after_install.sh`. That is your customization hook.
+
 ## Lincense
 
 This software is distributed under the [MIT](MIT-LICENSE) license.

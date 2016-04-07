@@ -19,7 +19,10 @@ for file in "$@"; do
 done
 
 if [[ -s "/vagrant/vagrant/vagrant_after_install.sh" ]]; then
+  inform "loading custom after_install"
   source /vagrant/vagrant/vagrant_after_install.sh
+else
+  inform "No custom after_install found"
 fi
 
 exit 0
