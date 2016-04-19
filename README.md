@@ -42,7 +42,7 @@ vagrant ssh
 
 Create a `vagrant/vagrant_after_install.sh`. That is your customization hook.
 
-## Lincense
+## License
 
 This software is distributed under the [MIT](MIT-LICENSE) license.
 
