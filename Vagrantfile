@@ -15,11 +15,11 @@ Vagrant.configure(2) do |config|
     vm.memory = helper.memory_fraction(4)
   end
 
-  script = <<SCRIPT
+  script = <<-SCRIPT
     sudo apt-get update -y
     sudo apt-get install -y curl
     curl https://raw.githubusercontent.com/ggs-pages/php-dev-box/master/vagrant/remote-install.sh | bash
-SCRIPT
+  SCRIPT
 
   config.vm.provision :shell, inline: script
 end
