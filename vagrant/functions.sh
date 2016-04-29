@@ -102,3 +102,29 @@ has() {
   type "$1" > /dev/null 2>&1
   return $?
 }
+
+vagrant_check() {
+  local command="$1 > /dev/null 2>&1"
+  as_vagrant $command
+  return $?
+}
+
+has_ruby() {
+  vagrant_check 'ruby --version | grep "ruby 2.3"'
+  return $?
+}
+
+has_nginx() {
+  vagrant_check 'curl -I localhost | grep "Server: nginx/1.8"'
+  return $?
+}
+
+has_php() {
+  vagrant_check 'php --version | grep "5.6"'
+  return $?
+}
+
+has_npm() {
+  vagrant_check 'npm --version | grep "^2\."'
+  return $?
+}
